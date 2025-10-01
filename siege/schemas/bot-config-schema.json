@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/bot-config-schema.json",
+	"title": "Attack bot config schema",
+	"description": "Config file that attack bot uses",
+	"type": "object",
+	"properties": {
+		"id": { "type": "integer" },
+		"name": { "type": "string" },
+		"server": { "type": "string", "format": "uri" },
+		"key": { "type": "string" },
+		"server_key": { "type": "string" }
+	},
+	"required": ["id", "name", "server", "key", "server_key"],
+	"additionalProperties": false
+}

@@ -1,0 +1,8 @@
+name: station-website
+services:
+  station-website:
+    build: .
+    container_name: station-website
+    ports:
+      - "10003:10003"
+    restart: always

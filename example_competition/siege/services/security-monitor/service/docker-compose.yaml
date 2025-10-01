@@ -1,0 +1,8 @@
+name: security-monitor
+services:
+  security-monitor:
+    build: .
+    container_name: security-monitor
+    ports:
+      - "10002:10002"
+    restart: always

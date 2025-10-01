@@ -1,0 +1,11 @@
+services:                               # Attack targets
+  - name: "Voter Registry"              # Service name
+    folder: "voter-registry"            # Folder where service files are located
+    file: "voter_registry_attacker.py"  # Attacker script file
+    class: "VoterRegistryAttacker"      # Attacker class name
+    address: "127.0.0.1:10010"          # Address of the challenge
+    requests: 6                         # Number of requests to send (will be an equal mix of benign and malicious)
+    flags:                              # Flag for each vulnerability type
+      - "flag{MDkBkW8S}"
+      - "flag{pP6IihKm}"
+      - "flag{VdoIRKRP}"

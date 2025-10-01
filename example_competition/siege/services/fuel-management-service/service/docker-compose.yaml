@@ -1,0 +1,8 @@
+name: fuel-management-service
+services:
+  fuel-management-service:
+    build: .
+    container_name: fuel-management-service
+    ports:
+      - "10001:10001"
+    restart: always

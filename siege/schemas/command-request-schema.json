@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/command-request-schema.json",
+	"title": "Requests to Command API",
+	"description": "Requests from bot to server Command API",
+	"type": "object",
+	"properties": {
+		"request": { "type": "string" },
+		"team_id": { "type": "integer" }
+	},
+	"required": ["request", "team_id"],
+	"additionalProperties": false
+}

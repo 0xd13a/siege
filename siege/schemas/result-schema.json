@@ -1,0 +1,32 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/result-schema.json",
+	"title": "Attack execution results",
+	"description": "Results of executing all attacks in a single tick sent to scoreboard by an attack bot",
+	"type": "object",
+	"properties": {
+		"team_id": { "type": "integer" },
+		"tick": { "type": "integer" },
+		"results": { 
+			"type": "object",
+			"patternProperties": {
+				"^\\d+$": {
+					"type": "array",
+					"items": {
+						"type": "array",
+						"items": {
+							"type": "integer"
+						},
+						"minItems": 2,
+						"maxItems": 2,
+						"additionalProperties": false
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"required": ["results", "team_id", "tick"],
+	"additionalProperties": false
+}

@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/keys-config-schema.json",
+	"title": "Key configuration schema for the server",
+	"description": "Defines a server private key and a list of public keys for teams",
+	"type": "object",
+	"properties": {
+		"key": { "type": "string" },
+		"teams": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": { "type": "integer" },
+					"name": { "type": "string" },
+					"key": { "type": "string" }
+				},
+				"required": ["id", "name", "key"],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": ["teams", "key"],
+	"additionalProperties": false
+}

@@ -1,0 +1,13 @@
+start_time: "2024-06-20 13:30:00+00:00"
+duration: 240
+prep_minutes: 30
+tick_length: 60
+server: "https://127.0.0.1:65500"
+site_folder: "/var/www/html"
+score_cap: 100
+successful_benign_points: 2
+failed_benign_points: 2
+successful_malicious_points: 2
+failed_malicious_points: 2
+down_points: 1
+

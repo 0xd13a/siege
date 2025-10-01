@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/services-light-config-schema.json",
+	"title": "Services config file schema (for the light competition)",
+	"description": "Defines vulnerable services for the light competition",
+	"type": "object",
+	"properties": {
+		"services": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": { "type": "string" },
+					"folder": { "type": "string" },
+					"file": { "type": "string" },
+					"class": { "type": "string" },
+					"address": { "type": "string" },
+					"requests": { "type": "integer" },
+					"flags": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"additionalProperties": false
+					}					
+				},
+				"required": ["name", "folder", "file", "class", "address", "requests", "flags"],
+				"additionalProperties": false
+			}
+		}		
+	},
+	"required": ["services"],
+	"additionalProperties": false
+}

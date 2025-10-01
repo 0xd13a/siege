@@ -1,0 +1,55 @@
+services:
+  - name: "Fuel Management Service"
+    folder: "fuel-management-service"
+    file: "fuel_management_attacker.py"
+    class: "FuelManagementAttacker"
+    address: "127.0.0.1:10001"
+    description: >
+      You, with your fancy solar panels and wind farms, don't have a
+      worry in the world. But real energy generation requires fuel
+      delivery and waste removal. And you must be an expert to use
+      this system; there is no room for error. Note from the admin:
+      I have a sinking feeling this service is half-cooked... :(
+    vulns: 3
+    requests:
+      per_tick: 10
+      schedule:
+        - tick: 0
+          set: "1,1,1,2,2,-1,-1,-1,-2,-2"
+        - tick: 100
+          set: "1,2,3,3,3,-1,-2,-3,-3,-3"
+
+  - name: "Security Monitor" 
+    folder: "security-monitor"
+    file: "monitor_attacker.py"
+    class: "MonitorAttacker"
+    address: "127.0.0.1:10002" 
+    description: >
+      Security at a nuclear power station is paramount. Someone is
+      always watching!
+    vulns: 3
+    requests:
+      per_tick: 10
+      schedule:
+        - tick: 0
+          set: "1,1,1,2,2,-1,-1,-1,-2,-2"
+        - tick: 70
+          set: "1,2,3,3,3,-1,-2,-3,-3,-3"
+
+  - name: "Station Website"
+    folder: "station-website"
+    file: "station_website_attacker.py"
+    class: "StationWebsiteAttacker" 
+    address: "127.0.0.1:10003"
+    description: >
+      We are very pleased with the new site PowerGPT has built for us.
+      More functionality to be added soon, but at least you can already
+      sign in and read the news. Can your AI do that?
+    vulns: 3
+    requests:
+      per_tick: 10
+      schedule:
+        - tick: 0
+          set: "1,1,1,2,2,-1,-1,-1,-2,-2"
+        - tick: 60
+          set: "1,1,2,3,3,-1,-1,-2,-3,-3"

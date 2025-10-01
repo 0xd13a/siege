@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/server-config-schema.json",
+	"title": "Siege server config file schema",
+	"description": "This is the main file config file for the server",
+	"type": "object",
+	"properties": {
+		"start_time": { "type": "string", "format": "date-time" },
+		"duration": { "type": "integer" },
+		"prep_minutes": { "type": "integer" },
+		"tick_length": { "type": "integer" },
+		"server": { "type": "string", "format": "uri" },
+		"site_folder": { "type": "string" },
+		"score_cap": { "type": "integer" },
+		"negative_score_cap": { "type": "integer" },
+		"successful_benign_points": { "type": "integer" },
+		"failed_benign_points": { "type": "integer" },
+		"successful_malicious_points": { "type": "integer" },
+		"failed_malicious_points": { "type": "integer" },
+		"down_points": { "type": "integer" }
+	},
+	"required": ["start_time", "duration", "prep_minutes", "tick_length", "server", "site_folder", "score_cap", "negative_score_cap", "successful_benign_points", "failed_benign_points", "successful_malicious_points", "failed_malicious_points", "down_points"],
+	"additionalProperties": false
+}

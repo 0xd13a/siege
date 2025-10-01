@@ -1,0 +1,5 @@
+The user database has the following format:
+
+Column 0 - username
+Column 1 - password
+Column 2 - user type (0 - operator, 1 - administrator, 2 - maintenance technician)

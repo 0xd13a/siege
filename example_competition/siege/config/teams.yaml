@@ -1,0 +1,5 @@
+teams:
+  - name: "Test Team A"
+    email: "captain@test-team-a.com"
+  - name: "Test Team B"
+    email: "captain@test-team-b.com"

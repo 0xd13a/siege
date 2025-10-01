@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/services-config-schema.json",
+	"title": "Services config file schema",
+	"description": "Defines vulnerable services",
+	"type": "object",
+	"properties": {
+		"services": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": { "type": "string" },
+					"folder": { "type": "string" },
+					"file": { "type": "string" },
+					"class": { "type": "string" },
+					"address": { "type": "string" },
+					"description": { "type": "string" },
+					"vulns": { "type": "integer" },
+					"requests": {
+						"type": "object",
+						"properties": {
+							"per_tick": { "type": "integer" },
+							"schedule": { 
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"tick": { "type": "integer" },
+										"set": { 
+											"type": "array", 
+											"items": {
+												"type": "integer" 
+											}
+										}
+									},
+									"required": ["tick", "set"],
+									"additionalProperties": false
+								}
+							}
+						},
+						"required": ["per_tick", "schedule"],
+						"additionalProperties": false
+					}					
+				},
+				"required": ["name", "folder", "file", "class", "address", "description", "requests", "vulns"],
+				"additionalProperties": false
+			}
+		}		
+	},
+	"required": ["services"],
+	"additionalProperties": false
+}

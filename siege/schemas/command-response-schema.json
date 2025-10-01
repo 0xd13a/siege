@@ -1,0 +1,60 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/command-request-schema.json",
+	"title": "Responses from Command API",
+	"description": "Responses from server Command API to bot",
+	"type": "object",
+	"properties": {
+		"action": { "type": "string" },
+		"config": {
+			"type": "object",
+			"properties": {
+				"start_time": { "type": "string", "format": "date-time" },
+				"end_time": { "type": "string", "format": "date-time" },
+				"tick_length": { "type": "integet" },
+				"targets": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": { "type": "integer" },
+							"name": { "type": "string" },
+							"folder": { "type": "string" },
+							"file": { "type": "string" },
+							"class": { "type": "string" },
+							"address": { "type": "string" },
+							"description": { "type": "string" },
+							"vulns": { "type": "integer" },
+							"requests": {
+								"type": "object",
+								"properties": {
+									"per_tick": { "type": "integer" },
+									"schedule": { 
+										"type": "array",
+										"items": {
+											"type": "object",
+											"properties": {
+												"tick": { "type": "integer" },
+												"set": { "type": "array", "items": "integer" }
+											},
+											"required": ["tick", "set"],
+											"additionalProperties": false
+										}
+									}
+								},
+								"required": ["per_tick", "schedule"],
+								"additionalProperties": false
+							}					
+						},
+						"required": ["name", "folder", "file", "class", "address", "description", "requests", "vulns"],
+						"additionalProperties": false
+					}
+				},
+				"required": ["start_time", "end_time", "tick_length", "targets"],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": ["action"],
+	"additionalProperties": false
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset=UTF-8>
+		<link rel="stylesheet" href="/static/styles.css">
+		<title>Can-doo Nuclear Generating Station Fuel Management Service: Status</title>
+	</head>
+    <body>
+		<img class="center" src="/static/station.png">
+		{% if username == None %}
+		<a class="text-right" href="/login">Login</a>
+		{% else %}
+		<span class="text-right"><span class="bold">Welcome {{ username }}!</span>&nbsp;<a href="/login">Logout</a></span>
+		{% endif %}
+		<h2 class="text-center">Can-doo Nuclear Generating Station Fuel Management Service</h2>
+		<hr>
+		<br>
+		<h1 class="text-center blue">Current status:</h1>
+		<table>
+			<tr><td>Total number of channels: <span class="blue">400</span></td></tr>
+			<tr><td>Used channels: <span class="blue">{{ used_channels }}</span></td></tr>
+			<tr><td>Fuel bundles ready for removal: <span class="blue">{{ ready_bundles }}</span></td></tr>
+		</table>
+		<hr>
+		<br>
+		<h2 class="text-center">Bundle operations (Management Technicians only)</h2>
+		<form class="text-center" action="/change" method="post">
+			<label>Bundles to insert: </label>
+			<input type="text" name="bundles_to_insert">
+			<label>Bundles to remove: </label>
+			<input type="text" name="bundles_to_remove">
+			<input type="submit" value="Move bundles">
+		</form> 
+		<br>
+		<img class="center blur" src="/static/bundles.jpg">
+	</body>
+</html>
