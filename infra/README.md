@@ -18,7 +18,9 @@ Instructions are provided for provisioning from a Linux environment, but they sh
 
 * Execute the following command to verify that the provisioned environment does not have problems:
 
+```
 terraform plan -var-file=../../../../example_competition/siege/settings.tfvars
+```
 
 * If that worked successfully, you are ready to provision the infrastructure. To do that, in the previous command replace `plan` with `apply`. To destroy the environment replace `apply` with `destroy`.
 
@@ -34,7 +36,9 @@ terraform plan -var-file=../../../../example_competition/siege/settings.tfvars
 
 * Execute the following command to verify that the provisioned environment does not have problems:
 
+```
 terraform plan -var-file=../../../../example_competition/siege-light/settings.tfvars
+```
 
 * If that worked successfully, you are ready to provision the infrastructure. To do that, in the previous command replace `plan` with `apply`. To destroy the environment replace `apply` with `destroy`.
 
