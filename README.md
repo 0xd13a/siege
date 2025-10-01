@@ -51,7 +51,7 @@ The rest of the workflow is similar to the original competition - you need to an
 
 ## Setting up a competition
 
-***We are completing a set of scripts that automate provisioning of competition environments. Stay tuned.***
+***We are completing [a set of scripts](./infra) that automate provisioning of competition environments. Stay tuned.***
 
 ## Vulnerable service development
 
